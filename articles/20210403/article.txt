@@ -1,0 +1,50 @@
+# This is a Heading h1
+
+## This is a Heading h2 
+
+## Emphasis  
+
+_This will also be italic_  
+
+__This will also be bold__
+
+_You **can** combine them_
+
+## Lists
+
+### Unordered
+
+* Item 1
+* Item 2
+* Item 2a
+* Item 2b
+
+### Ordered
+
+1. Item 1
+1. Item 2
+1. Item 3
+
+## Images
+
+![This is a alt text.](/articles/20210907/demo.jpg "This is a sample image.")
+
+## Links
+
+Here to link my [github](https://github.com/doncechenjun).
+
+## Blockquotes
+
+> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+
+## Blocks of code
+
+`
+let message = 'Hello world';
+alert(message);
+`
+
+## Inline code
+
+This web site is using `markedjs/marked`.
