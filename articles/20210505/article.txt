@@ -1,1 +1,31 @@
-# Pagination
+# Pagination# Pagination
+
+Pagination fit for 1 to infinte number.
+
+![Pagination bar](/articles/20210505/p1.png "image.")
+
+# Right Click menu
+
+You can change right click menu customly
+
+![Right click menu](/articles/20210505/p2.png "image.")
+
+# Common link icon
+
+some commonly use icon are include in Font Awesome CSS
+
+![Link icon](/articles/20210505/p3.png "image.")
+
+# Filter
+
+Filter can filt some properties in your objects.
+
+![filter](/articles/20210505/p4.png "image.")
+
+# Read file
+
+You can read static file under "/public/ .txt"
+
+# Router / HashRouter / Parameter
+
+Get the route under root
