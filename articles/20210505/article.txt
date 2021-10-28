@@ -30,4 +30,6 @@ You can read static file under "/public/ .txt"
 
 Get the route under root
 
+# Code link
+
 React.js code [here](https://github.com/doncechenjun/React-common-use-component)
