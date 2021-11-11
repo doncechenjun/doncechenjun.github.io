@@ -1,0 +1,60 @@
+![CNN](/articles/20210603/t.png "CNN")
+
+# CNN
+
+> A convolutional neural network is a DNN which can take 2D or hiegher dimension tensor as input.
+> As it is strong at pattern detection, it is commonly used in the image processing, e.g., image classifier, image GAN...
+
+Today CNN can be easily trained by personal computer thanks to high performance GPU and advanced semiconductor processing. 
+
+## handwritten digits
+
+![handwritten digits](/articles/20210603/handwritten digits.png "handwritten digits")
+
+> Multi class classification like handwritten digits recognition can be done if we have enougth data to train our CNN.
+
+* __Traingin__
+
+NN : 2 layers of CNN and one layer of FC network.
+
+After training with 60000 data, Cross entropy is minimize to ~0.05 and the testing accuracy is up to ~98%
+
+![Training Loss](/articles/20210603/p1.png "Training Loss")
+
+* __Prediction__
+
+CNN make prediction after seeing these picture: 
+
+![Prediction](/articles/20210603/p2.png "Prediction")
+
+In these 25 pictures, it makes all the prediction right.
+
+But there are still some mistakes:
+
+![Wrong Prediction](/articles/20210603/p3.png "Wrong Prediction")
+
+## How about Kudō Shin-ichi and Kaitō Kiddo?
+
+![Ran](/articles/20210603/p4.png "Ran")
+
+> For Mori Ran's happiness, a machine which can tell between Shin-ichi and Kiddo is necessary.
+
+* __Data collection__
+
+Still working on it...
+
+.
+
+.
+
+.
+
+_My prediction of the result : CNN will focuse on the Magic Hat to recognite kiddo._
+
+.
+
+.
+
+.
+
+## In the next article 
