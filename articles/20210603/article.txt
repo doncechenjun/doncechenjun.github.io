@@ -39,9 +39,39 @@ But there are still some mistakes:
 
 > For Mori Ran's happiness, a machine which can tell between Shin-ichi and Kiddo is necessary.
 
-* __Data collection__
+It's a simple CNN binary classification with 3 convolution layer and 2 fully connection layer.
 
-Still working on it...
+My data set : 300 picture of each character.
+
+* __Training Loss after 50 epoch__
+
+![BCELoss](/articles/20210603/p45.png "Training Loss")
+
+* __Testing data__
+
+The number above the picture is the output from machine.
+
+As it close to 1, the posibility of the machine consider the input image to be kiddo is higher.
+
+> Shin-ichi <- 0 ....... 1 -> kiddo
+
+![Testing data](/articles/20210603/p5.png "Testing data")
+
+I guess CNN focuse on the Magic Hat to recognite kiddo.
+
+* __So I try these testing data:__
+
+![Testing data](/articles/20210603/p6.png "Testing data")
+
+Even the character is not Shin-ichi or Kiddo, but with a hat:
+
+![Testing data](/articles/20210603/p7.png "Testing data")
+
+.
+
+To visuallize what exactly does CNN see, we can use _Saliency map_.
+
+I'll implement the Saliency map of this net work if I can spare more time...
 
 .
 
@@ -49,12 +79,18 @@ Still working on it...
 
 .
 
-_My prediction of the result : CNN will focuse on the Magic Hat to recognite kiddo._
+## In the next article (GAN/cGAN)
+
+* __architectures of cGAN__
+
+![next article](/articles/20210603/pnext2.png "next article")
 
 .
 
-.
+> Who am I ? "PIKACHU !"
 
-.
+![next article](/articles/20210603/pnext.jpg "next article")
 
-## In the next article 
+I'll try to use cGAN (conditional Generative Adversarial Network) to make every shadow into PIKACHU.
+
+
