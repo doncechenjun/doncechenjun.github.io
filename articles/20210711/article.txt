@@ -1,0 +1,43 @@
+![Scale](/articles/20210711/p1.png "scale")
+
+> Scale of this board
+
+# ESP32-PICO-D4
+
+> A System-in-Package(SiP) module is based on ESP32, providing complete Wi-Fi and Bluetooth functionalities.
+
+You can downloaw the datasheet of ESP32-PICO-D4 from [Espressif](https://www.espressif.com/en).  
+
+## My ESP32 board
+
+> I didn't follow the pin definition of Type C. But makes this prototype more user-friendly.
+
+* __Main board__
+
+Including an ESP32 chip, an IMU, an LDO and a user define button.
+
+To reduce the size,  the programmer is isolated from it and no I/Os are broken out.
+
+* __Programmer__
+
+In the programmer, a CP2102 chip convert USB to TTL.
+
+## E schematic
+
+* __Main board__
+
+![Main](/articles/20210711/p2.png "main")
+
+.
+
+* __Programmer__
+
+![TTL](/articles/20210711/p3.png "TTL")
+
+## PCB Layout
+
+.
+
+## In the next article (Bluetooth device)
+
+I will use this board to build a Bluetooth deice.
