@@ -38,6 +38,10 @@ In the programmer, a CP2102 chip convert USB to TTL.
 
 .
 
+Waiting for PCB product for final validation.
+
+.
+
 ## In the next article (Bluetooth device)
 
 I will use this board to build a Bluetooth deice.
