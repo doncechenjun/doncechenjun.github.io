@@ -14,7 +14,7 @@ You can downloaw the datasheet of ESP32-PICO-D4 from [Espressif](https://www.esp
 
 * __Main board__
 
-Including an ESP32 chip, an IMU, an LDO and a user define button.
+Including an ESP32 chip, an IMU, an LDO and an user define button.
 
 To reduce the size,  the programmer is isolated from it and no I/Os are broken out.
 
