@@ -31,7 +31,7 @@ var loader = new THREE.GLTFLoader();
 loader.setCrossOrigin( 'Anonymous' );
 //https://s3-us-west-2.amazonaws.com/s.cdpn.io/39255/ladybug.gltf
 
-loader.load( 'https://github.com/doncechenjun/doncechenjun.github.io/blob/main/articles/20210711/test.gltf', function ( gltf ) {
+loader.load( './test.gltf', function ( gltf ) {
     //console.log('控制台查看加载gltf文件返回的对象结构',gltf.scene.position)
     //console.log('gltf对象场景属性',gltf.scene)
     //console.log('gltf对象相机属性',gltf.cameras)
