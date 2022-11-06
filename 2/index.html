@@ -36,7 +36,7 @@ loader.load( './test.gltf', function ( gltf ) {
     //console.log('gltf对象场景属性',gltf.scene)
     //console.log('gltf对象相机属性',gltf.cameras)
     // 返回的场景对象gltf.scene插入到threejs场景中
-    gltf.scene.position.y=-15
+    //gltf.scene.position.y=-15
     gltfObj=gltf;
     //scene.add(gltf.scene);
     
@@ -99,7 +99,7 @@ loader.load( './test.gltf', function ( gltf ) {
         //cube.position.x+=0.01
         //cube.position.z+=0.01
         t=t+0.1
-        gltf.scene.position.z+=0.1
+        //gltf.scene.position.z+=0.1
         gltf.scene.rotation.z=Math.sin(t)/10
     }
 
