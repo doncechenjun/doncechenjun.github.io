@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <title>GLTF!!</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+<script>
+// 创建GLTF加载器对象
+let scene, renderer, camera
+let cube
+var gltfObj
+
+
+var loader = new THREE.GLTFLoader();
+loader.setCrossOrigin( 'Anonymous' );
+//https://s3-us-west-2.amazonaws.com/s.cdpn.io/39255/ladybug.gltf
+
+loader.load( 'https://github.com/doncechenjun/doncechenjun.github.io/blob/main/articles/20210711/test.gltf', function ( gltf ) {
+    //console.log('控制台查看加载gltf文件返回的对象结构',gltf.scene.position)
+    //console.log('gltf对象场景属性',gltf.scene)
+    //console.log('gltf对象相机属性',gltf.cameras)
+    // 返回的场景对象gltf.scene插入到threejs场景中
+    gltf.scene.position.y=-15
+    gltfObj=gltf;
+    //scene.add(gltf.scene);
+    
+
+    // 初始化場景、渲染器、相機、物體
+    function init() {
+        // 建立場景
+        scene = new THREE.Scene()
+
+        // 建立渲染器
+        renderer = new THREE.WebGLRenderer()
+        renderer.setSize(window.innerWidth, window.innerHeight) // 場景大小
+        renderer.setClearColor(0xeeeeee, 1.0) // 預設背景顏色
+        renderer.shadowMap.enable = true // 陰影效果
+
+        // 將渲染器的 DOM 綁到網頁上
+        document.body.appendChild(renderer.domElement)
+
+        // 建立相機
+        camera = new THREE.PerspectiveCamera(
+            45,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            100
+        )
+        camera.position.set(00, 20, 50)
+        camera.lookAt(scene.position)
+
+        cameraControl = new THREE.OrbitControls(camera,renderer.domElement)
+	    cameraControl.enableDamping = true // 啟用阻尼效果
+	    cameraControl.dampingFactor = 0.25 // 阻尼系數
+	    // cameraControl.autoRotate = true // 啟用自動旋轉
+
+
+        // 建立光源
+        pointLight = new THREE.AmbientLight(0xffffff)
+        //pointLight.position.set(0, 20, 0)
+        scene.add(pointLight)
+
+        // 建立物體
+
+        scene.add(gltfObj.scene);
+
+
+        const planeGeometry = new THREE.PlaneGeometry(60, 60)
+        const planeMaterial = new THREE.MeshLambertMaterial({ color: 0xa0a0a0 })
+        plane = new THREE.Mesh(planeGeometry, planeMaterial)
+        plane.rotation.x = -0.5 * Math.PI // 使平面與 y 軸垂直，並讓正面朝上
+        plane.position.set(0, -6, 0)
+        scene.add(plane)
+
+    }
+
+    // 建立動畫
+    var t =0
+    function animate() {
+        //cube.rotation.x += 0.01
+        //cube.rotation.y += 0.01
+        //cube.rotation.z += 0.01
+        //cube.position.x+=0.01
+        //cube.position.z+=0.01
+        t=t+0.1
+        gltf.scene.position.z+=0.1
+        gltf.scene.rotation.z=Math.sin(t)/10
+    }
+
+    // 渲染場景
+    function render() {
+        animate()
+        requestAnimationFrame(render)
+        cameraControl.update()
+        renderer.render(scene, camera)
+    }
+
+    // 監聽螢幕寬高來做簡單 RWD 設定
+    window.addEventListener('resize', function () {
+        camera.aspect = window.innerWidth / window.innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+    })
+
+    init()
+    render()
+
+
+})
+</script>
+
+</html>
