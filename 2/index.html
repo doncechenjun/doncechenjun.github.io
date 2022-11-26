@@ -36,7 +36,7 @@ loader.load( './test.gltf', function ( gltf ) {
     //console.log('gltf对象场景属性',gltf.scene)
     //console.log('gltf对象相机属性',gltf.cameras)
     // 返回的场景对象gltf.scene插入到threejs场景中
-    gltf.scene.position.y=-6
+    //gltf.scene.position.y=-6
     gltfObj=gltf;
     //scene.add(gltf.scene);
     
@@ -62,7 +62,7 @@ loader.load( './test.gltf', function ( gltf ) {
             0.1,
             100
         )
-        camera.position.set(00, -2, 20)
+        camera.position.set(00, 4, 20)
         //camera.lookAt(scene.position)
 	
 
@@ -87,7 +87,7 @@ loader.load( './test.gltf', function ( gltf ) {
         const planeMaterial = new THREE.MeshLambertMaterial({ color: 0xa0a0a0 })
         plane = new THREE.Mesh(planeGeometry, planeMaterial)
         plane.rotation.x = -0.5 * Math.PI // 使平面與 y 軸垂直，並讓正面朝上
-        plane.position.set(0, -6, 0)
+        plane.position.set(0, 0, 0)
         scene.add(plane)
 
     }
