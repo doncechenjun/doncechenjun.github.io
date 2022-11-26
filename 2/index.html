@@ -72,8 +72,8 @@ loader.load( './test.gltf', function ( gltf ) {
 
 
         // 建立光源
-        pointLight = new THREE.PointLight(0xffffff,5,50)
-        pointLight.position.set(0, 20, 0)
+        pointLight = new THREE.AmbientLight(0xffffff,5)
+        //pointLight.position.set(0, 20, 0)
         scene.add(pointLight)
 
         // 建立物體
