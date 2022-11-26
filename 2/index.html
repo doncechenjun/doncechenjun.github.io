@@ -64,7 +64,7 @@ loader.load( './test.gltf', function ( gltf ) {
         )
         camera.position.set(00, 2, 20)
         //camera.lookAt(scene.position)
-	camera.lookAt(0,-10,0)
+	camera.lookAt(0,-100,0)
 
         cameraControl = new THREE.OrbitControls(camera,renderer.domElement)
 	    cameraControl.enableDamping = true // 啟用阻尼效果
