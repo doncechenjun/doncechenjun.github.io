@@ -62,7 +62,7 @@ loader.load( './test.gltf', function ( gltf ) {
             0.1,
             100
         )
-        camera.position.set(00, 10, 10)
+        camera.position.set(00, 10, 20)
         camera.lookAt(scene.position)
 
         cameraControl = new THREE.OrbitControls(camera,renderer.domElement)
@@ -73,7 +73,7 @@ loader.load( './test.gltf', function ( gltf ) {
 
         // 建立光源
         pointLight = new THREE.AmbientLight(0xffffff)
-        //pointLight.position.set(0, 20, 0)
+        pointLight.position.set(0, 20, 0)
         scene.add(pointLight)
 
         // 建立物體
