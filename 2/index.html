@@ -67,11 +67,11 @@ loader.load( './test.gltf', function ( gltf ) {
 	
 
         cameraControl = new THREE.OrbitControls(camera,renderer.domElement)
-	    cameraControl.enableDamping = true // 啟用阻尼效果
-	    cameraControl.dampingFactor = 0.25 // 阻尼系數
+	cameraControl.enableDamping = true // 啟用阻尼效果
+	cameraControl.dampingFactor = 0.25 // 阻尼系數
 	    // cameraControl.autoRotate = true // 啟用自動旋轉
 
-	camera.lookAt(new THREE.Vector3(0,0,-20))
+	camera.lookAt(new THREE.Vector3(0,-5,0))
         // 建立光源
         ambientLight = new THREE.AmbientLight(0xffffff)
         pointLight=new THREE.PointLight(0xffffff,2,50)
