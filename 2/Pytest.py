@@ -1,32 +1,33 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 
-# Define the input and output sizes
-input_size = 5
-output_size = 10
+# Set up input and output shapes
+input_shape = (None, 5)
+output_shape = (None, 10)
 
-# Generate some dummy data with variable-length sequences
-sequences = [[np.random.randn(np.random.randint(10, 20), input_size) for _ in range(5)] for _ in range(100)]
+# Generate random input and output data
+input_data = np.array([np.random.rand(np.random.randint(1, 100), 5).astype(np.float32) for _ in range(1000)])
+#output_data = np.array([np.random.rand(input_.shape[0], 10).astype(np.float32) for input_ in input_data])
 
-# Pad the sequences to a fixed length
-padded_sequences = tf.keras.preprocessing.sequence.pad_sequences(
-    sequences, padding='post', dtype='float32')
+# Pad the input sequences with zeros
+input_data = tf.keras.preprocessing.sequence.pad_sequences(input_data, padding='post', dtype='float32')
+output_data = np.array([np.random.rand(input_.shape[0], 10).astype(np.float32) for input_ in input_data])
 
-# Create a binary mask to ignore padded values
-mask = tf.cast(padded_sequences != 0, dtype='float32')
 
-# Define the RNN model with GRU layer and masked input
-model = tf.keras.Sequential([
-    tf.keras.layers.Masking(mask_value=0., input_shape=(None, input_size)),
-    tf.keras.layers.GRU(units=output_size),
-    tf.keras.layers.Dense(units=output_size, activation='softmax')
-])
+# Create a sequential model
+model = tf.keras.Sequential()
+
+model.add(tf.keras.layers.Masking(mask_value=0., input_shape=input_shape))
+model.add(tf.keras.layers.SimpleRNN(32, return_sequences=True))
+model.add(tf.keras.layers.Dense(output_shape[1]))
 
 # Compile the model
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(loss='mse', optimizer='adam')
 
-# Generate some dummy labels for training
-labels = np.random.randn(100, output_size)
-
-# Train the model with masked input and sequence length
-model.fit(padded_sequences, labels, epochs=10, sample_weight=mask)
+# Train the model
+history=model.fit(input_data, 
+          output_data, 
+          epochs=10, 
+          batch_size=32,
+          validation_split=0.2
+          )
