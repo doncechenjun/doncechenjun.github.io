@@ -5,7 +5,12 @@
 
 
 pip install numpy
+
 pip install matplotlib
+
 pip install tensorflow
+
 pip install pandas
+
 pip install seaborn
+
