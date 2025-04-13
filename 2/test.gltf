@@ -1759,12 +1759,7 @@
       "target": 34962
     }
   ],
-  "buffers": [
-    {
-      "byteLength": 241920,
-      "uri": "ladybug.bin"
-    }
-  ],
+  
   "extensionsRequired": [
     "KHR_materials_pbrSpecularGlossiness"
   ],
